@@ -11,8 +11,8 @@ const museoModerno = MuseoModerno({
 });
 
 export const metadata: Metadata = {
-  title: "Rubnik",
-  description: "Page of the Rubnik",
+  title: "Rubnik | Agentes IA",
+  description: "EXPERIÊNCIA DA NOVA GERAÇÃO DE AGENTES IA PARA NEGÓCIOS.",
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className={`${museoModerno.className} antialiased`}>
         <main>
           <Toaster />

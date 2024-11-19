@@ -74,7 +74,7 @@ export default function Home() {
           <h1
             className={`text-[60px] leading-[72px] text-center  ${overPass.className}`}
           >
-            EXPERIÊNCIA DA NOVA GERAÇÃO DE AGENTES DE{" "}
+            EXPERIÊNCIA DA NOVA GERAÇÃO DE AGENTES{" "}
             <span className="text-blue-500">IA</span> PARA NEGÓCIOS
           </h1>
           <div className="flex flex-col gap-1">
