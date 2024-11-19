@@ -12,7 +12,7 @@ const museoModerno = MuseoModerno({
 
 export const metadata: Metadata = {
   title: "Rubnik | Agentes IA",
-  description: "EXPERIÊNCIA DA NOVA GERAÇÃO DE AGENTES IA PARA NEGÓCIOS.",
+  description: "EXPERIÊNCIA DA NOVA GERAÇÃO DE AGENTES IA PARA NEGÓCIOS!",
 };
 
 export default function RootLayout({
