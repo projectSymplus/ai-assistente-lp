@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { TextGenerateEffectExample } from "@/components/ui/textGenerateEffect"
-import { useToast } from "@/hooks/use-toast"
-import { Overpass_Mono } from "next/font/google"
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from "react"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { TextGenerateEffectExample } from "@/components/ui/textGenerateEffect";
+import { useToast } from "@/hooks/use-toast";
+import { Overpass_Mono } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 const overPass = Overpass_Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-overPass",
   weight: ["300", "400", "500", "600", "700"],
-})
+});
 
-const date = new Date()
-const year = date.getFullYear()
+const date = new Date();
+const year = date.getFullYear();
 
 export default function Home() {
-  const [email, setEmail] = useState("")
-  const toast = useToast()
+  const [email, setEmail] = useState("");
+  const toast = useToast();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const response = await fetch(
         "https://hook.us1.make.com/opry7ec9g82a2pd2eo44vnsx126g8v1h",
@@ -33,30 +33,30 @@ export default function Home() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email }),
         }
-      )
+      );
 
       // Se o envio for bem-sucedido, atualiza a mensagem de sucesso
       if (response.ok) {
         toast.toast({
           title: "E-mail enviado com sucesso!",
           description: "Fique atento ao seu e-mail para mais informações.",
-        })
+        });
       } else {
         toast.toast({
           title: "Erro ao enviar o e-mail.",
           description: "Por favor, tente novamente mais tarde.",
           variant: "destructive",
-        })
+        });
       }
     } catch (error) {
-      console.error(error)
+      console.error(error);
       toast.toast({
         title: "Erro ao enviar o e-mail.",
         description: "Por favor, tente novamente mais tarde.",
         variant: "destructive",
-      })
+      });
     }
-  }
+  };
 
   return (
     <div className="min-h-screen flex flex-col select-none">
@@ -101,7 +101,7 @@ export default function Home() {
               <Input
                 type="email"
                 placeholder="E-mail"
-                className="focus:outline-none focus:ring-0"
+                className="focus-visible:outline-none focus-visible:ring-1"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -121,5 +121,5 @@ export default function Home() {
         <p className="text-gray-600 text-sm">{`© ${year} Rubnik | Todos os Direitos Reservado`}</p>
       </footer>
     </div>
-  )
+  );
 }
