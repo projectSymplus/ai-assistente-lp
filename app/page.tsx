@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TextGenerateEffectExample } from "@/components/ui/textGenerateEffect";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useToast } from "@/hooks/use-toast";
 import { Overpass_Mono } from "next/font/google";
 import Image from "next/image";
@@ -80,8 +81,7 @@ export default function Home() {
           <div className="flex flex-col gap-1">
             <p className="text-xl leading-4 text-center mx-auto font-light">
               <TextGenerateEffectExample
-                text="Aumente suas conversões e melhore o atendimento ao cliente 24/7
-                com agentes de IA"
+                text="Aumente suas conversões e melhore o atendimento ao cliente 24/7 com agentes de IA"
                 duration={0.3}
               />
             </p>
@@ -120,6 +120,7 @@ export default function Home() {
         <Image src="/icon.svg" alt="icon" width={30} height={30} />
         <p className="text-gray-600 text-sm">{`© ${year} Rubnik | Todos os Direitos Reservado`}</p>
       </footer>
+      <BackgroundBeams />
     </div>
   );
 }

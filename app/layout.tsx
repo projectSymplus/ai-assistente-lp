@@ -22,6 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <link rel="icon" href="/icon.svg" sizes="any" />
+      </head>
       <body className={`${museoModerno.className} antialiased`}>
         <main>
           <Toaster />
