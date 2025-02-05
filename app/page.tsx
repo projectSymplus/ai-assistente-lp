@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { TextGenerateEffectExample } from "@/components/ui/textGenerateEffect";
+import { TextGenerateEffect } from "@/components/ui/textGenerateEffect";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useToast } from "@/hooks/use-toast";
 import { Overpass_Mono } from "next/font/google";
@@ -36,7 +36,6 @@ export default function Home() {
         }
       );
 
-      // Se o envio for bem-sucedido, atualiza a mensagem de sucesso
       if (response.ok) {
         toast.toast({
           title: "E-mail enviado com sucesso!",
@@ -61,32 +60,34 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col select-none">
-      <header className="w-[65%] mx-auto mt-8 flex justify-between items-center">
+      <header className="w-full sm:w-[65%] mx-auto mt-8 flex justify-between items-center px-4">
         <Image src="/logo.svg" alt="logo" width={150} height={150} />
-
         <Button asChild>
           <Link href="https://wa.me/557788500766" target="_blank">
             Fale conosco
           </Link>
         </Button>
       </header>
-      <main className="flex-grow w-[65%] mx-auto mt-8 flex flex-col items-center justify-center">
+
+      <main className="flex-grow w-full mx-auto mt-40 sm:mt-8 flex flex-col items-center justify-center px-4">
         <section className="flex flex-col gap-4 -mt-40 items-center justify-center">
           <h1
-            className={`text-[60px] leading-[72px] text-center  ${overPass.className}`}
+            className={`text-[32px] sm:text-[60px] leading-[34px] sm:leading-[72px] text-center ${overPass.className}`}
           >
-            EXPERIÊNCIA DA NOVA GERAÇÃO DE AGENTES{" "}
-            <span className="text-blue-500">IA</span> PARA NEGÓCIOS
+            EXPERIÊNCIA <br className="block sm:hidden" /> DA NOVA GERAÇÃO DE{" "}
+            <br className="block" />
+            AGENTES <span className="text-blue-500">IA</span> PARA NEGÓCIOS
           </h1>
-          <div className="flex flex-col gap-1">
-            <p className="text-xl leading-4 text-center mx-auto font-light">
-              <TextGenerateEffectExample
+
+          <div className="flex flex-col gap-1 mt-5 sm:mt-0 mx-auto">
+            <p className="text-lg sm:text-xl leading-6 sm:leading-4 text-center mx-auto font-light">
+              <TextGenerateEffect
                 text="Aumente suas conversões e melhore o atendimento ao cliente 24/7 com agentes de IA"
                 duration={0.3}
               />
             </p>
-            <p className="text-xl leading-4 text-center w-[70%] mx-auto font-light">
-              <TextGenerateEffectExample
+            <p className="text-lg sm:text-xl leading-6 sm:leading-4 text-center mx-auto font-light">
+              <TextGenerateEffect
                 text="Que entendem e interagem como humanos."
                 duration={0.5}
               />
